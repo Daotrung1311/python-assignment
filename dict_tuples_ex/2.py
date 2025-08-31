@@ -14,7 +14,13 @@ def print_all():
 
 def add():
     stock_ticker = input()
-    price = input()
+    price = float(input())
+    if stock_ticker in d:
+        d[stock_ticker].append(price)
+        
+    else:
+        d[stock_ticker] = [price]
+    print_all()
 
 
 def main():
