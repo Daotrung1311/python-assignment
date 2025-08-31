@@ -10,19 +10,20 @@ def calculate_letter_grade(score):
     else:
         return "F"
     
+
+# Enter 1 - 100
+# Out ò range == > error
+# else print(grade)
+# congratudation
     
-
 try:
-    user_input = input("Enter your grade (0–100): ")
-    grade = int(user_input)
-
-    if grade < 0 or grade > 100:
-        raise ValueError("Grade must be between 0 and 100.")
-
+    grade = int(input("Enter grade from 0 - 100: "))
     letter = calculate_letter_grade(grade)
-except ValueError as ve:
-    print(f"⚠️ {ve}")
+    if (0 > grade) or (grade >100):
+        raise KeyError("grade must in range 0 to 100")
+except KeyError as e:
+    print(f"{e}")
 else:
-    print(f"✅ Your letter grade is: {letter}")
+    print(f"grade: {letter}")
 finally:
-    print("🎓 Thank you for using the Grade Calculator. Goodbye!")
+    print("thank for using")
